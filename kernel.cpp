@@ -2,8 +2,8 @@
 
 int main(void)
 {
-	Video vid;
+    Video vid;
     vid.write("Hello, world!");
     vid.nl();
-    vid.write("Welcome to weight");
+    vid.write("Welcome to w8...");
 }
