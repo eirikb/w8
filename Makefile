@@ -1,8 +1,4 @@
-CC = gcc
-LD = ld
-AS = as
 CPP = g++
-
 
 CPPOPTS	= -m32 -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions
 
@@ -20,3 +16,5 @@ grub:
 
 run:
 	qemu -cdrom w8.iso
+
+.PHONY: all run
