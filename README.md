@@ -11,6 +11,7 @@ Build
 -----
 
 This will probably work:
+
     $ sudo apt-get install build-essential
     $ sudo apt-get install grub2
     $ sudo apt-get install qemu
@@ -20,6 +21,7 @@ This will probably work:
 Write to USB
 ------------
 Put a stick in your computer and run
+
     $ sudo dd if=w8.iso of=/dev/sdX
 
 Note
