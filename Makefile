@@ -8,7 +8,6 @@ kernel: console.cpp kernel.cpp
 	$(CPP) $(CPPOPTS) loader.S -o kernel $^
 
 clean:
-	rm *.o
 	rm kernel
 
 grub:
