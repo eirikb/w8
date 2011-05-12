@@ -26,4 +26,3 @@ Note
 ----
 At the moment this will be utmost minimum needed code to get something running!
 Trying to keep it as simple as possible in the beginning
-
