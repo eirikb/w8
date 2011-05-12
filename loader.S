@@ -8,12 +8,6 @@
 
 .align 4
 .long MAGIC
-.long FLAGS
-.long CHECKSUM
-
-# reserve initial kernel stack space
-.set STACKSIZE, 0x4000          # that is, 16k.
-.comm stack, STACKSIZE, 32      # reserve 16k stack on a quadword boundary
 
 _start:
     mov   $(stack + STACKSIZE), %esp # set up the stack

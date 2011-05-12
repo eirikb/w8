@@ -1,14 +1,15 @@
 CPP = g++
 
-CPPOPTS	= -m32 -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions
+CPPOPTS	= -m32 -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions -Wno-write-strings
 
-all: video kernel grub
+all: kernel grub
 
-video: video.cpp
-	$(CPP) $(CPPOPTS) -o video.o $^
+kernel: console.cpp kernel.cpp
+	$(CPP) $(CPPOPTS) loader.S -o kernel $^
 
-kernel: kernel.cpp
-	$(CPP) $(CPPOPTS) loader.S video.o -o kernel $^
+clean:
+	rm *.o
+	rm kernel
 
 grub:
 	cp kernel ./iso/boot/kernel
@@ -17,4 +18,4 @@ grub:
 run:
 	qemu -cdrom w8.iso
 
-.PHONY: all run
+.PHONY: all clean run

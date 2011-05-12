@@ -1,9 +1,9 @@
-#include "video.h"
+#include "console.h"
 
 int main(void)
 {
-    Video vid;
-    vid.write("Hello, world!");
-    vid.nl();
-    vid.write("Welcome to w8...");
+    Console console;
+    console.write("Hello, world!");
+    console.nl();
+    console.write("Welcome to w8...");
 }

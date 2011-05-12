@@ -1,0 +1,18 @@
+w8
+==
+
+This is the mother of all Proof Of Concepts.
+
+It's a JavaScript kernel with the name w8.
+w8 either means 'weight' because it's a light weight kernel on top of a heavy weight VM,
+or 'wait' because it might be horrible slow in runtime or to produce.
+
+Build
+-----
+
+This will probably work:
+$ sudo apt-get install build-essential
+$ sudo apt-get install grub2
+$ sudo apt-get install qemu
+$ make
+$ make run
