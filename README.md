@@ -17,6 +17,11 @@ $ sudo apt-get install qemu
 $ make
 $ make run
 
+Write to USB
+------------
+Put a stick in your computer and run
+$ sudo dd if=w8.iso of=/dev/sdX
+
 Note
 ----
 At the moment this will be utmost minimum needed code to get something running!
