@@ -3,7 +3,7 @@ w8
 
 This is the mother of all Proof Of Concepts.
 
-It's a JavaScript kernel with the name w8.<
+It's a JavaScript kernel with the name w8.<br>
 w8 either means 'weight' because it's a light weight kernel on top of a heavy weight VM,
 or 'wait' because it might be horrible slow in runtime or to produce.
 

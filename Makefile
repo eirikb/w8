@@ -5,7 +5,7 @@ CPPOPTS	= -m32 -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions -
 all: kernel grub
 
 kernel: console.cpp kernel.cpp
-	$(CPP) $(CPPOPTS) loader.S -o kernel $^
+	$(CPP) $(CPPOPTS) loader.S -o kernel libv8.a $^
 
 clean:
 	rm kernel
