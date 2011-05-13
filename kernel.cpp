@@ -3,7 +3,7 @@
 int main(void)
 {
     Console console;
-    console.write("Hello, world!");
-    console.nl();
+    console.clear();
+    console.write("Hello, world!\n");
     console.write("Welcome to w8...");
 }
