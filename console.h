@@ -1,13 +1,13 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
-class Console
-{
+class Console {
     public:
         Console();
         ~Console();
         void clear();
         void write(char *cp);
+        void writeInt(int num);
         void put(char c);
         void nl();
     private:
