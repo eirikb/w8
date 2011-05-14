@@ -55,11 +55,21 @@ void Console::put(char c) {
     }
 
     if (line >= 25) {
-        clear();
+        scroll();
     }
 
     videomem[(80 * line) + pos] = (unsigned char) c | 0x0700;
     pos++;
+}
+
+void Console::scroll() {
+    unsigned int x, y;
+    for (y = 0; y < 25; y++) {
+        for (x = 0; x < 80; x++) {
+            videomem[(y * 80) + x] = videomem[((y + 1) * 80) + x];
+        }
+    }
+    line--;
 }
 
 void Console::nl() {

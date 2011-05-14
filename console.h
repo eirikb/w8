@@ -9,6 +9,7 @@ class Console {
         void write(char *cp);
         void writeInt(int num);
         void put(char c);
+        void scroll();
         void nl();
     private:
         unsigned short *videomem;
