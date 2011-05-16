@@ -12,11 +12,11 @@ Build
 
 This will probably work:
 
-    $ sudo apt-get install build-essential
-    $ sudo apt-get install grub2
-    $ sudo apt-get install qemu
+    $ sudo apt-get install build-essential xorriso grub2 qemu
+    $ ln -s /path/to/v8 v8
     $ make
-    $ make run
+
+You need to point to the v8-directory since that is used directly by Makefile and kernel.cpp
 
 Write to USB
 ------------
