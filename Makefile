@@ -1,5 +1,5 @@
 CPP = g++
-CPPOPTS	= -m32 -lpthread -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions -Wno-write-strings
+CPPOPTS	= -lm -m32 -lpthread -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions -Wno-write-strings
 
 all: kernel grub run
 
