@@ -1,6 +1,6 @@
 #include "console.h"
 #include "operators.h"
-#include "v8/v8.h"
+#include "v8/include/v8.h"
 
 using namespace v8;
 
