@@ -1,11 +1,10 @@
 CPP = g++
-
 CPPOPTS	= -m32 -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions -Wno-write-strings
 
-all: kernel grub
+all: kernel grub run
 
 kernel: console.cpp kernel.cpp
-	$(CPP) $(CPPOPTS) loader.S -o kernel $^
+	$(CPP) $(CPPOPTS) loader.s -o kernel $^
 
 clean:
 	rm kernel
