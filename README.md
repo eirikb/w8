@@ -10,10 +10,11 @@ or 'wait' because it might be horrible slow in runtime or to produce.
 Build
 -----
 
-This will probably work:
+This should get you going:
 
     $ sudo apt-get install build-essential xorriso grub2 qemu
-    $ ln -s /path/to/v8 v8
+    $ svn checkout http://v8.googlecode.com/svn/trunk v8
+    $ cd v8; scons; cd ..
     $ make
 
 You need to point to the v8-directory since that is used directly by Makefile and kernel.cpp
