@@ -4,7 +4,7 @@ CPPOPTS	= -lm -m32 -lpthread -ffreestanding -nostdlib -fno-builtin -fno-rtti -fn
 all: kernel grub run
 
 kernel: console.cpp kernel.cpp
-	$(CPP) $(CPPOPTS) loader.s -o kernel $^ v8/libv8.a
+	$(CPP) $(CPPOPTS) loader.s -o kernel $^ v8/libv8.a -lgcc
 
 clean:
 	rm kernel
