@@ -16,4 +16,4 @@ grub:
 run:
 	qemu -cdrom w8.iso
 
-.PHONY: all clean run
+.PHONY: all clean run kernel
