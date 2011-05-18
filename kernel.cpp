@@ -1,13 +1,13 @@
-#include "console.h"
-#include "operators.h"
-#include "support.h"
 #include "v8/include/v8.h"
+extern "C" {
+    #include "util.h"
+}
 
 using namespace v8;
 
 int main(void) {
-    Console console;
-    console.clear();
-    console.write("Welcome to w8...\n");
-    HandleScope handle_scope;
+    clear();
+    write("Like a boss\n");
+    //HandleScope handle_scope;
+    return 0;
 }

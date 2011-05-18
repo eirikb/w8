@@ -1,12 +1,30 @@
 CPP = g++
-CPPOPTS	= -lm -m32 -lpthread -ffreestanding -nostdlib -fno-builtin -fno-rtti -fno-exceptions -Wno-write-strings
+CC = gcc
+LD = ld
+FLAGS = -Wall -c -m32 -nostdlib -fno-builtin
+CPPFLAGS = -fno-rtti -fno-exceptions -Wno-write-strings
+CCFLAGS = 
+LDFLAGS = -lm -lpthread
 
-all: kernel grub run
+all: loader support util kernel link grub run
 
-kernel: console.cpp kernel.cpp
-	$(CPP) $(CPPOPTS) loader.s -o kernel $^ v8/libv8.a -lgcc
+loader: loader.s
+	as --32 $< -o loader.o
+
+support: support.cpp
+	$(CPP) $(FLAGS) $(CPPFLAGS) $<
+
+util: util.c
+	$(CC) $(FLAGS) $(CCFLAGS) $<
+
+kernel: kernel.cpp
+	$(CPP) $(FLAGS) $(CPPFLAGS) $^
+
+link: 
+	$(LD) $(LDFLAGS) loader.o support.o util.o kernel.o v8/libv8.a -o kernel /usr/lib/i386-linux-gnu/gcc/i686-linux-gnu/4.5/libgcc.a
 
 clean:
+	rm *.o
 	rm kernel
 
 grub:
