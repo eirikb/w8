@@ -1,4 +1,7 @@
-static int free_mem = 10000;
+#ifndef OPERATORS_H_ 
+#define OPERATORS_H_ 
+
+static int free_mem = 0x100000;
 
 void *my_alloc(unsigned int s) {
     free_mem = free_mem + 0x1000;
@@ -24,3 +27,5 @@ void *operator new[](unsigned int s) {
 void operator delete[](void *p) {
     return my_free(p);
 }
+
+#endif
