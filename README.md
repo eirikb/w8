@@ -12,7 +12,7 @@ Build
 
 This should get you going:
 
-    $ sudo apt-get install build-essential xorriso grub2 qemu subversion
+    $ sudo apt-get install build-essential xorriso grub2 qemu subversion scons
     $ svn checkout http://v8.googlecode.com/svn/trunk v8
     $ cd v8; scons; cd ..
     $ make
