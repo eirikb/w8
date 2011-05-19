@@ -45,7 +45,8 @@ void write(char *cp) {
     char *str = cp, *ch;
     for (ch = str; *ch; ch++) {
         if (*ch == 10) {
-            nl();
+            line++;
+            pos = 0;
         } else {
             put(*ch);
         }
@@ -91,9 +92,4 @@ void scroll() {
         }
     }
     line--;
-}
-
-void nl() {
-    pos = 0;
-    line++;
 }
