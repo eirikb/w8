@@ -5,6 +5,7 @@ FLAGS = -Wall -c -m32 -nostdlib -fno-builtin
 CPPFLAGS = -fno-rtti -fno-exceptions -Wno-write-strings
 CCFLAGS = 
 LDFLAGS = -lm -lpthread
+LGCC = $(shell gcc --print-libgcc-file-name)
 
 all: loader support util kernel link grub run
 
@@ -21,7 +22,7 @@ kernel: kernel.cpp
 	$(CPP) $(FLAGS) $(CPPFLAGS) $^
 
 link: 
-	$(LD) $(LDFLAGS) loader.o support.o util.o kernel.o v8/libv8.a -o kernel /usr/lib/i386-linux-gnu/gcc/i686-linux-gnu/4.5/libgcc.a
+	$(LD) $(LDFLAGS) loader.o support.o util.o kernel.o v8/libv8.a -o kernel $(LGCC)
 
 clean:
 	rm *.o
