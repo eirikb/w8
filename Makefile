@@ -4,8 +4,8 @@ LD = ld
 FLAGS = -Wall -c -m32 -nostdlib -fno-builtin
 CPPFLAGS = -fno-rtti -fno-exceptions -Wno-write-strings
 CCFLAGS = 
-LDFLAGS = -lm -lpthread
-LGCC = $(shell gcc --print-libgcc-file-name)
+LDFLAGS = -melf_i386 -lm -lpthread
+LGCC = $(shell gcc -m32 --print-libgcc-file-name)
 
 all: loader support util kernel link grub run
 
